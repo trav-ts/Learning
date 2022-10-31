@@ -6,9 +6,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mergesort
+namespace Sorting
 {
-    internal class MergeSort
+    internal class SortingAlgorithms
     {
 
         /// <summary>
@@ -32,33 +32,40 @@ namespace Mergesort
                 // Recursively call the right side of the array from the midpoint to the end.
                 Sort(arr, mid + 1, right);
 
-                return Merge(arr, left, right, mid);
+                Merge(arr, left, right, mid);
             }
             return arr;
         }
 
-        private int[] Merge(int[] arr, int left, int right, int mid)
+        private void Merge(int[] arr, int left, int right, int mid)
         {
-            int i = 1, j = mid + 1, n;
-            int[] temp = new int[left.Length + right.Length];
-            
-            if(left.Length > right.Length) 
-                n = left.Length;
-            else
-                n = right.Length;
+            int secondStart = mid + 1;
 
-            for (int k = 1; k < n; k++)
+            if (arr[mid] <= arr[secondStart])
+                return;
+
+            while(left <= mid && secondStart <= right)
             {
-                if (j > n)
+                if (arr[left] <= arr[secondStart])
+                    left++;
+                else
                 {
-                    temp[k] = left[i];
-                    i = j + 1;
-                }
-                else if(i> mid)
-                {
-                    temp[k] = left[j]
+                    int value = arr[secondStart];
+                    int index = secondStart;
+
+                    while(index != left)
+                    {
+                        arr[index] = arr[index - 1];
+                        index--;
+                    }
+                    arr[left] = value;
+
+                    left++;
+                    mid++;
+                    secondStart++;
                 }
             }
+            
 
             throw new NotImplementedException();
         }
