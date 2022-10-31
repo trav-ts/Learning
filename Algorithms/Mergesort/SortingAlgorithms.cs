@@ -17,9 +17,9 @@ namespace Sorting
         /// </summary>
         /// <param name="arr"> The array to be sorted</param>
         /// <param name="left"> The start index </param>
-        /// <param name="right"> The end index </param>
+        /// <param name="right"> The end index (size-1) </param>
         /// <returns></returns>
-        private int[] Sort(int[] arr, int left, int right)
+        private int[] MergeSort(int[] arr, int left, int right)
         {
             // This is insuring that the arrry length is never less than 1.
             if(left < right) {
@@ -27,10 +27,10 @@ namespace Sorting
                 int mid = left + (right - left) / 2;
 
                 // Recursively call the left side of the arry to the midpoint.
-                Sort(arr, left, mid);
+                MergeSort(arr, left, mid);
 
                 // Recursively call the right side of the array from the midpoint to the end.
-                Sort(arr, mid + 1, right);
+                MergeSort(arr, mid + 1, right);
 
                 Merge(arr, left, right, mid);
             }
@@ -65,9 +65,6 @@ namespace Sorting
                     secondStart++;
                 }
             }
-            
-
-            throw new NotImplementedException();
         }
     }
 }
