@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sorting
 {
-    internal class SortingAlgorithms
+    public class SortingAlgorithms
     {
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace Sorting
         /// <param name="left"> The start index </param>
         /// <param name="right"> The end index (size-1) </param>
         /// <returns></returns>
-        private int[] MergeSort(int[] arr, int left, int right)
+        public int[] MergeSort(int[] arr, int left, int right)
         {
             // This is insuring that the arrry length is never less than 1.
             if(left < right) {
