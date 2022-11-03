@@ -53,14 +53,14 @@ namespace DivideAndConquer
 
                 if (k < r)
                 {
-                    int[] temp = new int[r];
+                    int[] temp = new int[r-1];
                     Array.Copy(arr, 0, temp, 0, r - 1);
                     return MomSelect(temp, k);
                 }
                 else if (k > r)
                 {
                     int[] temp = new int[n - r];
-                    Array.Copy(arr, r + 1, temp, 0, n - r - 1);
+                    Array.Copy(arr, r, temp, 0, n - r);
                     return MomSelect(temp, k - r);
                 }
                 else
@@ -115,11 +115,8 @@ namespace DivideAndConquer
         {
             Array.Sort(arr);
 
-            // If the length of the array is even, take the left element. 
-            if (arr.Length % 2 == 0)
-                return arr[arr.Length / 2 - 1];
-            else
-                return arr[arr.Length / 2];
+            
+            return arr[arr.Length / 2];
         }
     }
 }

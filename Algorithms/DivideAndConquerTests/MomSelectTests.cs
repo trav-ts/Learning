@@ -24,7 +24,7 @@ namespace DivideAndConquerTests
         public void TestMethod1()
         {
             Select s = new Select();
-            int expected = 25;
+            int expected = 3;
             int[] arr = new int[50];
 
             for (int i = 0; i < 50; i++)
@@ -34,13 +34,33 @@ namespace DivideAndConquerTests
 
             Shuffle(arr);
 
-            int median = s.MomSelect(arr, arr.Length / 2);
+            int median = s.MomSelect(arr, 3);
+
+            Assert.AreEqual(expected, median);
+        }
+
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Select s = new Select();
+            int expected = 29;
+            int[] arr = new int[50];
+
+            for (int i = 0; i < 50; i++)
+            {
+                arr[i] = i + 1;
+            }
+
+            Shuffle(arr);
+
+            int median = s.MomSelect(arr, 29);
 
             Assert.AreEqual(expected, median);
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void TestMethod3()
         {
             Select s = new Select();
             int expected = 12;
