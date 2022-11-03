@@ -17,6 +17,7 @@ namespace DivideAndConquer
             else
             {
                 int m = n / 5;
+                int remainder = n%5;
                 int[] M = new int[m];
                 int[] arrayOfFive = new int[5];
 
@@ -30,6 +31,18 @@ namespace DivideAndConquer
                     M[i] = GetMedian(arrayOfFive);
                     arrayOfFive = new int[5];
                 }
+
+                if (remainder != 0)
+                {
+                    Array.Copy(arr, m * 5, arrayOfFive, 0, remainder);
+
+                    while (remainder < 5)
+                    {
+                        arrayOfFive[remainder - 1] = int.MaxValue;
+                        remainder++;
+                    }
+                }
+                
 
                 int mom = MomSelect(M, m / 2);
 
