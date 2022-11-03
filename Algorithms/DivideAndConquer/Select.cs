@@ -13,17 +13,24 @@ namespace DivideAndConquer
             int n = arr.Length;
 
             if (n <= 25)
-                return GetMedian(arr);
+            {
+                Array.Sort(arr);
+                return arr[k-1];
+            }
             else
             {
                 int m = n / 5;
-                int remainder = n%5;
-                int[] M = new int[m];
+                int remainder = n % 5;
+                int[] M;
+                if (remainder == 0)
+                    M = new int[m];
+                else
+                    M = new int[m + 1];
                 int[] arrayOfFive = new int[5];
 
-                for(int i = 0; i < m; i++)
+                for (int i = 0; i < m; i++)
                 {
-                    if(i == 0)
+                    if (i == 0)
                         Array.Copy(arr, 0, arrayOfFive, 0, 5);
                     else
                         Array.Copy(arr, 5 * i, arrayOfFive, 0, 5);
@@ -36,13 +43,9 @@ namespace DivideAndConquer
                 {
                     Array.Copy(arr, m * 5, arrayOfFive, 0, remainder);
 
-                    while (remainder < 5)
-                    {
-                        arrayOfFive[remainder - 1] = int.MaxValue;
-                        remainder++;
-                    }
+                    M[m] = GetMedian(arrayOfFive);
                 }
-                
+
 
                 int mom = MomSelect(M, m / 2);
 
@@ -51,18 +54,18 @@ namespace DivideAndConquer
                 if (k < r)
                 {
                     int[] temp = new int[r];
-                    Array.Copy(arr, 0, temp, 0, r - 2);
+                    Array.Copy(arr, 0, temp, 0, r-1);
                     return MomSelect(temp, k);
                 }
                 else if (k > r)
                 {
-                    int[] temp = new int[r];
-                    Array.Copy(arr, r, temp, 0, n - 1);
-                    return MomSelect(temp, k - r - 1);
+                    int[] temp = new int[n - r];
+                    Array.Copy(arr, r+1, temp, 0, n - r-1);
+                    return MomSelect(temp, k - r);
                 }
                 else
-                    return mom;
-                    
+                    return arr[r];
+
             }
 
         }
@@ -85,15 +88,15 @@ namespace DivideAndConquer
 
             for(int i = 0; i < n; i++)
             {
-                if (arr[i] <= arr[n-1])
+                if (arr[i] < arr[n-1])
                 {
                     Swap(arr, l, i);
                     l++;
                 }
             }
-            Swap(arr, n-1, l + 1);
+            Swap(arr, n-1, l);
 
-            return l + 1;
+            return l;
         }
 
         private void Swap(int[] arr, int firstIndex, int secondIndex)

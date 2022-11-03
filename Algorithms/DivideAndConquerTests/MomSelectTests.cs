@@ -29,7 +29,26 @@ namespace DivideAndConquerTests
 
             for(int i = 0; i < 50; i++)
             {
-                arr[i] = i;
+                arr[i] = i+1;
+            }
+
+            Shuffle(arr);
+
+            int median = s.MomSelect(arr, arr.Length/2);
+
+            Assert.AreEqual(expected, median);
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            Select s = new Select();
+            int expected = 12;
+            int[] arr = new int[24];
+
+            for (int i = 0; i < 24; i++)
+            {
+                arr[i] = i+1;
             }
 
             Shuffle(arr);
