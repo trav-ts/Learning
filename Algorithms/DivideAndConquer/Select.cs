@@ -15,7 +15,7 @@ namespace DivideAndConquer
             if (n <= 25)
             {
                 Array.Sort(arr);
-                return arr[k-1];
+                return arr[k - 1];
             }
             else
             {
@@ -54,13 +54,13 @@ namespace DivideAndConquer
                 if (k < r)
                 {
                     int[] temp = new int[r];
-                    Array.Copy(arr, 0, temp, 0, r-1);
+                    Array.Copy(arr, 0, temp, 0, r - 1);
                     return MomSelect(temp, k);
                 }
                 else if (k > r)
                 {
                     int[] temp = new int[n - r];
-                    Array.Copy(arr, r+1, temp, 0, n - r-1);
+                    Array.Copy(arr, r + 1, temp, 0, n - r - 1);
                     return MomSelect(temp, k - r);
                 }
                 else
@@ -86,15 +86,15 @@ namespace DivideAndConquer
 
             int l = 0;
 
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
-                if (arr[i] < arr[n-1])
+                if (arr[i] < arr[n - 1])
                 {
                     Swap(arr, l, i);
                     l++;
                 }
             }
-            Swap(arr, n-1, l);
+            Swap(arr, n - 1, l);
 
             return l;
         }

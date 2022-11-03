@@ -1,4 +1,9 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\Algorithms",
+    "\\Algorithms\\DivideAndConquerTests"
+  ],
+  "SelectedNode": "\\Algorithms\\DivideAndConquerTests\\MomSelectTests.cs",
   "PreviewInSolutionExplorer": false
 }
