@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting", "Mergesort\Sortin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingTests", "SortingTests\SortingTests.csproj", "{2DB414F1-2BAA-4DAA-82D5-D5ED2F75F653}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivideAndConquer", "DivideAndConquer\DivideAndConquer.csproj", "{D6F40616-105A-473C-B790-1BE4660226A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivideAndConquerTests", "DivideAndConquerTests\DivideAndConquerTests.csproj", "{C74C0BB0-D55B-4931-A729-87845BC4695C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{2DB414F1-2BAA-4DAA-82D5-D5ED2F75F653}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DB414F1-2BAA-4DAA-82D5-D5ED2F75F653}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DB414F1-2BAA-4DAA-82D5-D5ED2F75F653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F40616-105A-473C-B790-1BE4660226A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F40616-105A-473C-B790-1BE4660226A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F40616-105A-473C-B790-1BE4660226A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F40616-105A-473C-B790-1BE4660226A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C74C0BB0-D55B-4931-A729-87845BC4695C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74C0BB0-D55B-4931-A729-87845BC4695C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74C0BB0-D55B-4931-A729-87845BC4695C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74C0BB0-D55B-4931-A729-87845BC4695C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
