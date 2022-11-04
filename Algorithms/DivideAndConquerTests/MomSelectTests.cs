@@ -107,9 +107,9 @@ namespace DivideAndConquerTests
         public void TestWeightedMedianSmallArray()
         {
             int[] S = new int[5] {5,3,2,4,1};
-            int[] W = new int[5] {1,1,1,1,1};
+            int[] W = new int[5] {2,1,8,4,6};
 
-            int expected = 3;
+            int expected = 2;
 
             Select s = new Select();
             int result = s.WeightedMedian(S, W);

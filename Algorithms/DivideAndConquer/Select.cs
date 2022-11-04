@@ -53,43 +53,45 @@ namespace DivideAndConquer
                     break;
                 j++;
             }
+            int valOfMedian = W[j];
 
-            // Put median at end of arry. 
-            SwapBoth(S, W, j, n - 1);
+            int[] leftS = new int[pivotIndex];
+            int[] leftW = new int[pivotIndex];
+            int[] rightS = new int[n - pivotIndex - 1];
+            int[] rightW = new int[n - pivotIndex - 1];
 
-            // Split the array into two halfs based on the weight.
             int pivotIndex = 0;
             for (int i = 0; i < n; i++)
             {
                 if (W[i] < W[n - 1])
                 {
-                    SwapBoth(S, W, pivotIndex, i);
+                   
                     pivotIndex++;
                 }
             }
 
             // Put the median into its true median index.
             // l now represents the new index for the median.
-            SwapBoth(S, W, n - 1, pivotIndex);
             int[] leftS = new int[pivotIndex];
             int[] leftW = new int[pivotIndex];
-            int[] rightS = new int[n - pivotIndex];
-            int[] rightW = new int[n - pivotIndex];
+            int[] rightS = new int[n - pivotIndex-1];
+            int[] rightW = new int[n - pivotIndex-1];
             Array.Copy(S, 0, leftS, 0, pivotIndex);
             Array.Copy(W, 0, leftW, 0, pivotIndex);
-            Array.Copy(S, pivotIndex, rightS, 0, n - pivotIndex);
-            Array.Copy(W, pivotIndex, rightW, 0, n - pivotIndex);
+            Array.Copy(S, pivotIndex+1, rightS, 0, n - pivotIndex-1);
+            Array.Copy(W, pivotIndex+1, rightW, 0, n - pivotIndex-1);
 
-            int sumLessThanM = Sum(W, 0, pivotIndex - 1);
-            int sumGreaterThanM = Sum(W, pivotIndex + 1, W.Length - 1);
+            int sumLessThanM = Sum(W, 0, pivotIndex);
+            int sumGreaterThanM = Sum(W, pivotIndex + 1, W.Length);
 
             // Check either sub array for the weighted median or return the median if it has already been found. 
-            if (sumLessThanM > L)
-                return WeightedSelect(leftS, leftW, L, G - W[pivotIndex] - sumLessThanM);
-            else if (sumLessThanM < L)
-                return WeightedSelect(rightS, rightW, L - W[pivotIndex] - sumGreaterThanM, G);
-            else
+            if (sumLessThanM <= L && sumGreaterThanM <= G)
                 return S[pivotIndex];
+            else if (sumLessThanM > L)
+                return WeightedSelect(leftS, leftW, L, G - W[pivotIndex] - sumGreaterThanM);
+            else
+                return WeightedSelect(rightS, rightW, L - W[pivotIndex] - sumLessThanM, G);
+            
         }
 
 
