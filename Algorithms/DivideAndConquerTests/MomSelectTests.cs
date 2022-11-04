@@ -115,5 +115,17 @@ namespace DivideAndConquerTests
             int result = s.WeightedMedian(S, W);
             Assert.AreEqual(expected, result);
         }
+        [TestMethod]
+        public void TestWeightedMedianSmallArrayNoWeight()
+        {
+            int[] S = new int[5] { 5, 3, 2, 4, 1 };
+            int[] W = new int[5] { 1,1,1,1,1 };
+
+            int expected = 3;
+
+            Select s = new Select();
+            int result = s.WeightedMedian(S, W);
+            Assert.AreEqual(expected, result);
+        }
     }
 }

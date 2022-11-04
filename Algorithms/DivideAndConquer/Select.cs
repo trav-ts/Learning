@@ -53,25 +53,27 @@ namespace DivideAndConquer
                     break;
                 j++;
             }
-            int valOfMedian = W[j];
+            SwapBoth(S, W, j, n - 1);
 
-            int[] leftS = new int[pivotIndex];
-            int[] leftW = new int[pivotIndex];
-            int[] rightS = new int[n - pivotIndex - 1];
-            int[] rightW = new int[n - pivotIndex - 1];
-
+            // Split the array into two halfs based on the weight.
+            int l = 0;
             int pivotIndex = 0;
             for (int i = 0; i < n; i++)
             {
-                if (W[i] < W[n - 1])
+                if (S[i] < S[n - 1])
                 {
-                   
+                    SwapBoth(S, W, l, i);
+                    l++;
+                    SwapBoth(S, W, pivotIndex, i);
                     pivotIndex++;
                 }
             }
 
             // Put the median into its true median index.
             // l now represents the new index for the median.
+            SwapBoth(S, W, n - 1, l);
+
+
             int[] leftS = new int[pivotIndex];
             int[] leftW = new int[pivotIndex];
             int[] rightS = new int[n - pivotIndex-1];
