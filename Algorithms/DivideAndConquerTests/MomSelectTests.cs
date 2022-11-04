@@ -23,7 +23,7 @@ namespace DivideAndConquerTests
         [TestMethod]
         public void TestMethod1()
         {
-            int testSize = 50;
+            int testSize = 500;
             Select s = new Select();
             int expected;
             int[] arr = new int[testSize];
@@ -87,7 +87,7 @@ namespace DivideAndConquerTests
         [TestMethod]
         public void TestGeeksMom()
         {
-            int testSize = 50;
+            int testSize = 1000;
             int[] array = new int[testSize];
             for (int i = 0; i < testSize; i++)
             {
@@ -98,8 +98,8 @@ namespace DivideAndConquerTests
 
             Select s = new Select();
 
-            int expected = 22;
-            int result = s.MomSelect(array, 22);
+            int expected = 30;
+            int result = s.MomSelect(array, 30);
             Assert.AreEqual(expected, result);
         }
     }
