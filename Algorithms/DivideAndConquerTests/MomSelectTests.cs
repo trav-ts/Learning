@@ -106,7 +106,7 @@ namespace DivideAndConquerTests
         [TestMethod]
         public void TestWeightedMedianSmallArray()
         {
-            int[] S = new int[5] {1,2,3,4,5};
+            int[] S = new int[5] {5,3,2,4,1};
             int[] W = new int[5] {1,1,1,1,1};
 
             int expected = 3;
