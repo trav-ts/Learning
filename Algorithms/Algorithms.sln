@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivideAndConquerTests", "Di
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphs", "Graphs\Graphs.csproj", "{A1AA5B68-6D60-4145-A968-FAE502B9CC6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphTests", "WFSTests\GraphTests.csproj", "{717F8DAD-51D7-4CC9-8C85-BCF47C15AE75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A1AA5B68-6D60-4145-A968-FAE502B9CC6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1AA5B68-6D60-4145-A968-FAE502B9CC6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1AA5B68-6D60-4145-A968-FAE502B9CC6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717F8DAD-51D7-4CC9-8C85-BCF47C15AE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717F8DAD-51D7-4CC9-8C85-BCF47C15AE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717F8DAD-51D7-4CC9-8C85-BCF47C15AE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717F8DAD-51D7-4CC9-8C85-BCF47C15AE75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
